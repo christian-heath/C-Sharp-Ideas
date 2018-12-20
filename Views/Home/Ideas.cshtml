@@ -1,0 +1,32 @@
+@{
+ViewData["Title"] = "Home Page";
+}
+@model beltexam.Models.Idea
+<nav class="navbar navbar-expand-sm bg-primary">
+    <h1 id="introduction" class='header'>Welcome @ViewBag.User.Name</h1>
+    <a href="/Logout" id="logout" class="btn btn-danger">Logout</a>
+</nav>
+<div id='post_message'>
+    <h1>Post your idea!</h1>
+    <form asp-action="NewIdea" asp-controller="Home" method="post">
+
+        <span asp-validation-for="Message"></span>
+        <label asp-for="Message">Idea:</label>
+        <input asp-for="Message">
+        <input value="Submit" class="btn btn-primary" type="submit">
+    </form>
+</div>
+<div id="idea-wall">
+    <ul style="list-style-type: none; display: inline-block;">
+        @foreach(var idea in @ViewBag.Ideas){
+        <li class="idea">
+            <h2><a href="/Users/@idea.User.UserId">@idea.User.Name</a> says: <span class="border">"@idea.Message"</span>
+                @if(@idea.UserId == @ViewBag.User.UserId)
+                {<a class="btn btn-danger" href="/Delete/@idea.IdeaId">Delete</a>
+                }</h2>
+            <h2><a class="btn btn-success" id="like" href="/Like/@idea.IdeaId">Like</a>
+                <a href="/Ideas/@idea.IdeaId">@idea.Likes.Count people like this</a></h2>
+        </li>
+        }
+    </ul>
+</div>

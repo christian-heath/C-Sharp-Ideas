@@ -1,0 +1,53 @@
+@{
+ViewData["Title"] = "Home Page";
+}
+@model beltexam.Models.IndexViewModel
+<nav class="navbar navbar-expand-sm bg-primary">
+    <h1 class='header'>Welcome!</h1>
+</nav>
+<div class='big_form' id="registration">
+    <form asp-action="Register" asp-controller="Home" method="POST">
+        <div class="form-group">
+            <span asp-validation-for="@Model.User.Name"></span>
+            <label asp-for="@Model.User.Name"></label>
+            <input type="text" asp-for='@Model.User.Name' class="form-control" id="exampleFormControlInput1">
+        </div>
+        <div class="form-group">
+            <span asp-validation-for="@Model.User.Alias"></span>
+            <label asp-for="@Model.User.Alias"></label>
+            <input type="text" asp-for='@Model.User.Alias' class="form-control" id="exampleFormControlInput1">
+        </div>
+        <div class="form-group">
+            <span asp-validation-for="@Model.User.Email"></span>
+            <label asp-for="@Model.User.Email"></label>
+            <input type="text" asp-for='@Model.User.Email' class="form-control" id="exampleFormControlInput1">
+        </div>
+        <div class="form-group">
+            <span asp-validation-for="@Model.User.Password"></span>
+            <label asp-for="@Model.User.Password"></label>
+            <input type="Password" asp-for='@Model.User.Password' class="form-control" id="exampleFormControlInput1">
+        </div>
+        <div class="form-group">
+            <span asp-validation-for="@Model.User.Confirm"></span>
+            <label asp-for="@Model.User.Confirm"></label>
+            <input type="Password" asp-for='@Model.User.Confirm' class="form-control" id="exampleFormControlInput1">
+        </div>
+        <button type="submit" value='submit' id="button" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+<div id="login" class='big_form'>
+    <form asp-action="Login" asp-controller="Home" method='post'>
+        <div class="form-group">
+            <h1>Login</h1>
+            <span asp-validation-for="@Model.UserLog.Email"></span>
+            <label asp-for="@Model.UserLog.Email"></label>
+            <input type="text" asp-for="@Model.UserLog.Email" class="form-control" id="exampleFormControlInput1">
+        </div>
+        <div class="form-group">
+            <span asp-validation-for="@Model.UserLog.Password"></span>
+            <label asp-for="@Model.UserLog.Password"></label>
+            <input type="password" asp-for="@Model.UserLog.Password" class="form-control" id="exampleFormControlInput1">
+        </div>
+        <button type="submit" value='submit' id="button" class="btn btn-primary">Submit</button>
+    </form>
+</div>

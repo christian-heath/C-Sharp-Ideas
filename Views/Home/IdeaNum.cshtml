@@ -1,0 +1,31 @@
+@{
+ViewData["Title"] = "Home Page";
+}
+<nav class="navbar navbar-expand-sm bg-primary">
+    <a class="btn btn-info" href="/Ideas">Ideas home</a>
+    <a href="/Logout" id="logout" class="btn btn-danger">Logout</a>
+</nav>
+<h2><a href="/Users/@ViewBag.Idea.UserId">@ViewBag.Idea.User.Alias</a> says:</h2>
+<div id="idea-info" class="container">
+    <h2>"@ViewBag.Idea.Message"</h2>
+</div>
+<div class="container">
+    <h2>People who liked this post:</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Alias</th>
+                <th scope="col">Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var liker in @ViewBag.Likers)
+            {
+            <tr>
+                <th scope="row"><a href="/Users/@liker.User.UserId">@liker.User.Alias</a></th>
+                <td>@liker.User.Name</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,69 @@
+.big_form{
+    padding: 15px;
+    margin-top: 50px;
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 8px;
+    width: 450px;
+}
+.header{
+    text-align: center;
+}
+.error{
+    color: red;
+}
+#button{
+    margin-top: 10px;
+}
+#registration{
+    display: inline-block;
+    float: left;
+}
+#login{
+    display: inline-block;
+    float: right;
+}
+#logout{
+    margin-left: 300px;
+}
+#post_message {
+    display: block;
+    padding: 10px 20px;
+    margin: 4px;
+}
+.btn-success{
+    display: inline-block;
+    margin-left: 10px;
+    margin-bottom: 30px;
+}
+#idea-wall{
+    text-align: center;
+    padding: 10px 20px;
+    margin: 0 auto;
+}
+#delete_button{
+    margin-bottom: 10px;
+}
+.border{
+    width: 100px;
+    padding: 10px;
+    border-width: 5px;
+    border-radius: 8px;
+    border-style: solid;
+    border-color: black;
+}
+.idea{
+    margin-bottom: 35px;
+}
+#like{
+    margin: 20px;
+}
+#idea-info{
+    padding: 10px;
+    border-width: 5px;
+    border-radius: 8px;
+    border-style: solid;
+    border-color: black;
+    text-align: center;
+    margin-bottom: 50px;
+}
